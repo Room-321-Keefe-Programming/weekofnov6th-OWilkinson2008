@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -212,6 +213,35 @@ namespace WeekOfNov6th
         private void chkMileToKilo_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnOpenFile_Click(object sender, EventArgs e)
+        {
+
+            string lines = @"C:\\Users\\ollie\\source\\repos\\weekofnov6th-OWilkinson2008\\WeekOfNov6th\\bin\\test.txt";
+            string [] contents = File.ReadAllLines(lines);
+            for(var i = 0; i < contents.Length; i++)
+            {
+                rtbOutput.Text += contents[i];
+            }
+        }
+
+        private void btnPrintFile_Click(object sender, EventArgs e)
+        {
+            if (txtInput1.Text == "")
+            {
+                txtInput1.Text = "1";
+            }
+            //Makes the Input 0 if nothing is entered
+            string length= txtInput1.Text;
+            int lengthInt = int.Parse(length);
+
+            string lines = @"C:\\Users\\ollie\\source\\repos\\weekofnov6th-OWilkinson2008\\WeekOfNov6th\\bin\\test.txt";
+            string[] contents = File.ReadAllLines(lines);
+            for (var i = 0; i < contents.Length; i+lengthInt)
+            {
+                rtbOutput.Text += contents[i];
+            }
         }
     }
 }

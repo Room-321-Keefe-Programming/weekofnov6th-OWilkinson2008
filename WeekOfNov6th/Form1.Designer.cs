@@ -50,6 +50,8 @@
             this.btn_Distance2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tbDistance = new System.Windows.Forms.TextBox();
+            this.btnOpenFile = new System.Windows.Forms.Button();
+            this.btnPrintFile = new System.Windows.Forms.Button();
             this.grpTempConverter.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -295,11 +297,33 @@
             this.tbDistance.Size = new System.Drawing.Size(169, 29);
             this.tbDistance.TabIndex = 20;
             // 
+            // btnOpenFile
+            // 
+            this.btnOpenFile.Location = new System.Drawing.Point(897, 336);
+            this.btnOpenFile.Name = "btnOpenFile";
+            this.btnOpenFile.Size = new System.Drawing.Size(93, 48);
+            this.btnOpenFile.TabIndex = 22;
+            this.btnOpenFile.Text = "Open the File";
+            this.btnOpenFile.UseVisualStyleBackColor = true;
+            this.btnOpenFile.Click += new System.EventHandler(this.btnOpenFile_Click);
+            // 
+            // btnPrintFile
+            // 
+            this.btnPrintFile.Location = new System.Drawing.Point(897, 392);
+            this.btnPrintFile.Name = "btnPrintFile";
+            this.btnPrintFile.Size = new System.Drawing.Size(93, 48);
+            this.btnPrintFile.TabIndex = 23;
+            this.btnPrintFile.Text = "Print the file";
+            this.btnPrintFile.UseVisualStyleBackColor = true;
+            this.btnPrintFile.Click += new System.EventHandler(this.btnPrintFile_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1061, 648);
+            this.Controls.Add(this.btnPrintFile);
+            this.Controls.Add(this.btnOpenFile);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbDistance);
             this.Controls.Add(this.btn_Distance2);
@@ -353,6 +377,8 @@
         private System.Windows.Forms.Button btn_Distance2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbDistance;
+        private System.Windows.Forms.Button btnOpenFile;
+        private System.Windows.Forms.Button btnPrintFile;
     }
 }
 
