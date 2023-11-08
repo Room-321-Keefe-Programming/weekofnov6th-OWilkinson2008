@@ -179,6 +179,7 @@
             this.txtInput1.Name = "txtInput1";
             this.txtInput1.Size = new System.Drawing.Size(173, 29);
             this.txtInput1.TabIndex = 10;
+            this.txtInput1.TextChanged += new System.EventHandler(this.txtInput1_TextChanged);
             // 
             // lblInput1
             // 

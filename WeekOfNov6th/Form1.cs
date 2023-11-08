@@ -233,15 +233,22 @@ namespace WeekOfNov6th
                 txtInput1.Text = "1";
             }
             //Makes the Input 0 if nothing is entered
-            string length= txtInput1.Text;
+            string length = txtInput1.Text;
             int lengthInt = int.Parse(length);
 
             string lines = @"C:\\Users\\ollie\\source\\repos\\weekofnov6th-OWilkinson2008\\WeekOfNov6th\\bin\\test.txt";
-            string[] contents = File.ReadAllLines(lines);
-            for (var i = 0; i < contents.Length; i+lengthInt)
+            string contents = File.ReadAllText(lines);
+            string [] dog = contents.Split(' ');
+
+            for (var i = 0; i < dog.Length; i += lengthInt)
             {
-                rtbOutput.Text += contents[i];
+                rtbOutput.Text += ""+dog[i]+" ";
             }
+        }
+
+        private void txtInput1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
