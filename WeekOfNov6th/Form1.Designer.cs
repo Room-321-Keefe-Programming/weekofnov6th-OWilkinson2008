@@ -52,6 +52,7 @@
             this.tbDistance = new System.Windows.Forms.TextBox();
             this.btnOpenFile = new System.Windows.Forms.Button();
             this.btnPrintFile = new System.Windows.Forms.Button();
+            this.btnAlphabits = new System.Windows.Forms.Button();
             this.grpTempConverter.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -310,7 +311,7 @@
             // 
             // btnPrintFile
             // 
-            this.btnPrintFile.Location = new System.Drawing.Point(897, 392);
+            this.btnPrintFile.Location = new System.Drawing.Point(897, 390);
             this.btnPrintFile.Name = "btnPrintFile";
             this.btnPrintFile.Size = new System.Drawing.Size(93, 48);
             this.btnPrintFile.TabIndex = 23;
@@ -318,11 +319,22 @@
             this.btnPrintFile.UseVisualStyleBackColor = true;
             this.btnPrintFile.Click += new System.EventHandler(this.btnPrintFile_Click);
             // 
+            // btnAlphabits
+            // 
+            this.btnAlphabits.Location = new System.Drawing.Point(785, 362);
+            this.btnAlphabits.Name = "btnAlphabits";
+            this.btnAlphabits.Size = new System.Drawing.Size(93, 48);
+            this.btnAlphabits.TabIndex = 24;
+            this.btnAlphabits.Text = "Alphabaste";
+            this.btnAlphabits.UseVisualStyleBackColor = true;
+            this.btnAlphabits.Click += new System.EventHandler(this.btnAlphabits_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1061, 648);
+            this.Controls.Add(this.btnAlphabits);
             this.Controls.Add(this.btnPrintFile);
             this.Controls.Add(this.btnOpenFile);
             this.Controls.Add(this.label1);
@@ -380,6 +392,7 @@
         private System.Windows.Forms.TextBox tbDistance;
         private System.Windows.Forms.Button btnOpenFile;
         private System.Windows.Forms.Button btnPrintFile;
+        private System.Windows.Forms.Button btnAlphabits;
     }
 }
 

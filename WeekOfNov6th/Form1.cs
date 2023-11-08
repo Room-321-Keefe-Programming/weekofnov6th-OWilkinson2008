@@ -16,7 +16,7 @@ namespace WeekOfNov6th
         public Form1()
         {
             InitializeComponent();
-         
+
         }
 
         private void rdoTempConverter1_CheckedChanged(object sender, EventArgs e)
@@ -29,7 +29,7 @@ namespace WeekOfNov6th
 
         private void btn_Temp_Click(object sender, EventArgs e)
         {
-            if(txtInput1.Text == "")
+            if (txtInput1.Text == "")
             {
                 txtInput1.Text = "0";
             }
@@ -37,18 +37,18 @@ namespace WeekOfNov6th
             string temperature = txtInput1.Text;
             int temperInt = int.Parse(temperature);
             //Sets the Text to an Integer
-            if(rdoTempConverter1.Checked == true)
+            if (rdoTempConverter1.Checked == true)
             {
-                if(rtbOutput.Text != "")
+                if (rtbOutput.Text != "")
                 {
                     rtbOutput.Text += "\n";
                 }
-                rtbOutput.Text += $"{txtInput1.Text} Celsius is {(temperInt * 9/5)+32} Celsius";
+                rtbOutput.Text += $"{txtInput1.Text} Celsius is {(temperInt * 9 / 5) + 32} Celsius";
             }
             else
-            if(rdoTempConverter2.Checked == true)
+            if (rdoTempConverter2.Checked == true)
             {
-                    rtbOutput.Text += $"{txtInput1.Text} Celsius is {(temperInt - 32) * 5 / 9} Fahrenheit";
+                rtbOutput.Text += $"{txtInput1.Text} Celsius is {(temperInt - 32) * 5 / 9} Fahrenheit";
             }
             else
             {
@@ -219,8 +219,8 @@ namespace WeekOfNov6th
         {
 
             string lines = @"C:\\Users\\ollie\\source\\repos\\weekofnov6th-OWilkinson2008\\WeekOfNov6th\\bin\\test.txt";
-            string [] contents = File.ReadAllLines(lines);
-            for(var i = 0; i < contents.Length; i++)
+            string[] contents = File.ReadAllLines(lines);
+            for (var i = 0; i < contents.Length; i++)
             {
                 rtbOutput.Text += contents[i];
             }
@@ -238,17 +238,69 @@ namespace WeekOfNov6th
 
             string lines = @"C:\\Users\\ollie\\source\\repos\\weekofnov6th-OWilkinson2008\\WeekOfNov6th\\bin\\test.txt";
             string contents = File.ReadAllText(lines);
-            string [] dog = contents.Split(' ');
+            string[] dog = contents.Split(' ');
 
-            for (var i = 0; i < dog.Length; i += lengthInt)
+            for (var i = 0; i <= dog.Length; i += lengthInt)
             {
-                rtbOutput.Text += ""+dog[i]+" ";
+                rtbOutput.Text += "" + dog[i] + " ";
             }
         }
 
         private void txtInput1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAlphabits_Click(object sender, EventArgs e)
+        {
+            int counter = 26;
+            int caseCounter = 0;
+            bool caseFlip = false;
+            char[] LowerCaseAlphabet = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
+            char[] UpperCaseAlphabet = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
+            for (int i = 0; i <= LowerCaseAlphabet.Length-1; i++)
+            {
+                if (LowerCaseAlphabet[i] == 'a'|| LowerCaseAlphabet[i] == 'e' || LowerCaseAlphabet[i] == 'i' || LowerCaseAlphabet[i] == 'o' || LowerCaseAlphabet[i] == 'u')
+                {
+                    rtbOutput.Text += UpperCaseAlphabet[i];
+                }
+                else
+                {
+                    rtbOutput.Text += LowerCaseAlphabet[i];
+                }
+
+            }
+            rtbOutput.Text += "\n \n";
+            while(counter != 0)
+            {
+                counter--;
+                if (caseCounter == 5)
+                {
+                    rtbOutput.Text += ", ";
+                    caseFlip = !caseFlip;
+                    caseCounter = 0;
+                    if (caseFlip == true) {
+                        rtbOutput.Text += UpperCaseAlphabet[counter];
+                    }
+                    else
+                    {
+                        rtbOutput.Text += LowerCaseAlphabet[counter];
+                    }
+                }
+                else
+                {
+                    caseCounter += 1;
+                    if (caseFlip == true)
+                    {
+                        rtbOutput.Text += UpperCaseAlphabet[counter];
+                    }
+                    else
+                    {
+                        rtbOutput.Text += LowerCaseAlphabet[counter];
+                    }
+                }
+                
+            }
         }
     }
 }
